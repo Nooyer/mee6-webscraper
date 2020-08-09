@@ -9,6 +9,7 @@ def main():
     end_of_leaderboard = False
     json_user_list = []
 
+    # loops until it reaches the end of the player list
     while not end_of_leaderboard:
         scraper = Scraper(url + str(page_number))
         leaderboard = scraper.get_leaderboard()
@@ -18,6 +19,7 @@ def main():
             json_user_list.append(leaderboard)
             page_number += 1
 
+    # exports the parsed leaderboard list into a JSON file
     with open('leaderboard_list', 'w') as json_file:
         json.dump(json_user_list, json_file, indent=3)
 

@@ -7,7 +7,7 @@ class Scraper:
         self.web_page = requests.get(url)
 
     def get_leaderboard(self):
-        # scrapes 
+        """Returns the parsed leaderboard and has player's ID, level, no. of messages, and no. of exp"""
         leaderboard_raw = self.web_page.json()
 
         user_list = []
